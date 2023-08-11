@@ -82,6 +82,6 @@ function addQAndAElements() {
 }
 
 // Call the function to add Q&A elements to the DOM
-if (document.title == "HashimPage - About Me";) {
+if (document.title == "HashimPage - About Me") {
     addQAndAElements();
 }
