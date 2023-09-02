@@ -1,18 +1,13 @@
-// JavaScript code
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the dropdown element
     var dropdown = document.querySelector(".dropdown");
 
-    // Get the dropdown content element
     var dropdownContent = document.querySelector(".dropdown-content");
 
-    // Add event listeners to keep the dropdown open
     dropdown.addEventListener("mouseenter", function () {
         dropdownContent.style.display = "block";
     });
 
     dropdown.addEventListener("mouseleave", function () {
-        // Use a setTimeout to delay hiding the dropdown content
         setTimeout(function () {
             if (!dropdownContent.classList.contains("dropdown-hover")) {
                 dropdownContent.style.display = "none";
@@ -26,16 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dropdownContent.addEventListener("mouseleave", function () {
         dropdownContent.classList.remove("dropdown-hover");
-        // Use a setTimeout to delay hiding the dropdown content
         setTimeout(function () {
             dropdownContent.style.display = "none";
         }, 500);
     });
 });
 
-// JavaScript code
-
-// Q&A Data
 const qAndAData = [
     {
         question: "Q: Who am I?",
@@ -54,7 +45,6 @@ const qAndAData = [
     }
 ];
 
-// Function to create Q&A elements
 function createQAndAElement(question, answer) {
     const qAndAContainer = document.createElement("div");
     qAndAContainer.classList.add("curved-box");
@@ -71,7 +61,6 @@ function createQAndAElement(question, answer) {
     return qAndAContainer;
 }
 
-// Function to add Q&A elements to the DOM
 function addQAndAElements() {
     const contentElement = document.querySelector(".content");
 
@@ -81,7 +70,6 @@ function addQAndAElements() {
     });
 }
 
-// Call the function to add Q&A elements to the DOM
 if (document.title == "HashimPage - About Me") {
     addQAndAElements();
 }
