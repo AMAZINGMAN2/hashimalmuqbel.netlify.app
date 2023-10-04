@@ -1,297 +1,313 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var dropdown = document.querySelector(".dropdown");
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HashimPage - Register</title>
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
 
-    var dropdownContent = document.querySelector(".dropdown-content");
-
-    dropdown.addEventListener("mouseenter", function () {
-        dropdownContent.style.display = "block";
-    });
-
-    dropdown.addEventListener("mouseleave", function () {
-        setTimeout(function () {
-            if (!dropdownContent.classList.contains("dropdown-hover")) {
-                dropdownContent.style.display = "none";
-            }
-        }, 500);
-    });
-
-    dropdownContent.addEventListener("mouseenter", function () {
-        dropdownContent.classList.add("dropdown-hover");
-    });
-
-    dropdownContent.addEventListener("mouseleave", function () {
-        dropdownContent.classList.remove("dropdown-hover");
-        setTimeout(function () {
-            dropdownContent.style.display = "none";
-        }, 500);
-    });
-});
-
-const qAndAData = [
-    {
-        question: "Q: Who am I?",
-        answer:
-            "A: I am a 15-year-old high school student who started my programming journey by learning C# with Unity. From there, I explored Python, gained a taste of AI, and later ventured into C++ and MySQL."
-    },
-    {
-        question: "Q: What can you expect from me?",
-        answer:
-            "A: I aim to deliver high-quality software solutions that combine functionality, performance, and user satisfaction. I enjoy exploring new technologies and continuously expanding my knowledge to stay at the forefront of the rapidly evolving software industry."
-    },
-    {
-        question: "Q: What are my future goals?",
-        answer:
-            "A: As a passionate learner, I have several future goals. I plan to further enhance my skills in game development and explore advanced topics in artificial intelligence. Additionally, I aspire to contribute to open-source projects and engage in collaborative development experiences."
-    }
-];
-
-function createQAndAElement(question, answer) {
-    const qAndAContainer = document.createElement("div");
-    qAndAContainer.classList.add("curved-box");
-
-    const questionElement = document.createElement("h3");
-    questionElement.textContent = question;
-
-    const answerElement = document.createElement("p");
-    answerElement.textContent = answer;
-
-    qAndAContainer.appendChild(questionElement);
-    qAndAContainer.appendChild(answerElement);
-
-    return qAndAContainer;
-}
-
-function addQAndAElements() {
-    const contentElement = document.querySelector(".content");
-
-    qAndAData.forEach((item) => {
-        const qAndAElement = createQAndAElement(item.question, item.answer);
-        contentElement.appendChild(qAndAElement);
-    });
-}
-addEventListener("DOMContentLoaded", (event) => {
-    const password = document.getElementById("password-input");
-    const passwordAlert = document.getElementById("password-alert");
-    const requirements = document.querySelectorAll(".requirements");
-    let lengBoolean, bigLetterBoolean, numBoolean, specialCharBoolean;
-    let leng = document.querySelector(".leng");
-    let bigLetter = document.querySelector(".big-letter");
-    let num = document.querySelector(".num");
-    let specialChar = document.querySelector(".special-char");
-    const specialChars = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~";
-    const numbers = "0123456789";
-
-    requirements.forEach((element) => element.classList.add("wrong"));
-
-    password.addEventListener("focus", () => {
-        passwordAlert.classList.remove("d-none");
-        if (!password.classList.contains("is-valid")) {
-            password.classList.add("is-invalid");
+        body {
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            background: linear-gradient(to bottom right, #251b4d, #101429);
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
         }
-    });
-
-    password.addEventListener("input", () => {
-        let value = password.value;
-        if (value.length < 8) {
-            lengBoolean = false;
-        } else if (value.length > 7) {
-            lengBoolean = true;
+        body::-webkit-scrollbar {
+            width:0;
+        }
+        .github-link {
+            display: flex;
+            align-items: center;
         }
 
-        if (value.toLowerCase() == value) {
-            bigLetterBoolean = false;
-        } else {
-            bigLetterBoolean = true;
+        .github-image {
+            height: 30px;
+            width: auto;
+            margin-left: 0px;
+            margin-top: -4px;
+        }
+        .youtube-image {
+            height: 30px;
+            width: auto;
+            margin-left: 10px;
+            margin-top: -4px;
+            margin-bottom: -8px;
         }
 
-        numBoolean = false;
-        for (let i = 0; i < value.length; i++) {
-            for (let j = 0; j < numbers.length; j++) {
-                if (value[i] == numbers[j]) {
-                    numBoolean = true;
-                }
-            }
+
+        body::-webkit-scrollbar-track {
+            background-color: transparent;
         }
 
-        specialCharBoolean = false;
-        for (let i = 0; i < value.length; i++) {
-            for (let j = 0; j < specialChars.length; j++) {
-                if (value[i] == specialChars[j]) {
-                    specialCharBoolean = true;
-                }
-            }
+        body::-webkit-scrollbar-thumb {
+            background-color: transparent;
         }
 
-        if (lengBoolean == true && bigLetterBoolean == true && numBoolean == true && specialCharBoolean == true) {
-            password.classList.remove("is-invalid");
-            password.classList.add("is-valid");
-
-            requirements.forEach((element) => {
-                element.classList.remove("wrong");
-                element.classList.add("good");
-            });
-            passwordAlert.classList.remove("alert-warning");
-            passwordAlert.classList.add("alert-success");
-        } else {
-            password.classList.remove("is-valid");
-            password.classList.add("is-invalid");
-
-            passwordAlert.classList.add("alert-warning");
-            passwordAlert.classList.remove("alert-success");
-
-            if (lengBoolean == false) {
-                leng.classList.add("wrong");
-                leng.classList.remove("good");
-            } else {
-                leng.classList.add("good");
-                leng.classList.remove("wrong");
-            }
-
-            if (bigLetterBoolean == false) {
-                bigLetter.classList.add("wrong");
-                bigLetter.classList.remove("good");
-            } else {
-                bigLetter.classList.add("good");
-                bigLetter.classList.remove("wrong");
-            }
-
-            if (numBoolean == false) {
-                num.classList.add("wrong");
-                num.classList.remove("good");
-            } else {
-                num.classList.add("good");
-                num.classList.remove("wrong");
-            }
-
-            if (specialCharBoolean == false) {
-                specialChar.classList.add("wrong");
-                specialChar.classList.remove("good");
-            } else {
-                specialChar.classList.add("good");
-                specialChar.classList.remove("wrong");
-            }
-        }
-    });
-
-    password.addEventListener("blur", () => {
-        passwordAlert.classList.add("d-none");
-    });
-});
-addEventListener("DOMContentLoaded", (event) => {
-    const password = document.getElementById("password-input");
-    const passwordAlert = document.getElementById("password-alert");
-    const requirements = document.querySelectorAll(".requirements");
-    let lengBoolean, bigLetterBoolean, numBoolean, specialCharBoolean;
-    let leng = document.querySelector(".leng");
-    let bigLetter = document.querySelector(".big-letter");
-    let num = document.querySelector(".num");
-    let specialChar = document.querySelector(".special-char");
-    const specialChars = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~";
-    const numbers = "0123456789";
-
-    requirements.forEach((element) => element.classList.add("wrong"));
-
-    password.addEventListener("focus", () => {
-        passwordAlert.classList.remove("d-none");
-        if (!password.classList.contains("is-valid")) {
-            password.classList.add("is-invalid");
-        }
-    });
-
-    password.addEventListener("input", () => {
-        let value = password.value;
-        if (value.length < 8) {
-            lengBoolean = false;
-        } else if (value.length > 7) {
-            lengBoolean = true;
+        body {
+            scrollbar-width: none;
         }
 
-        if (value.toLowerCase() == value) {
-            bigLetterBoolean = false;
-        } else {
-            bigLetterBoolean = true;
+        .content {
+            padding-right: 0;
+        }
+        .home {
+            white-space: nowrap;
+            margin-right: -25px;
+            margin-left: 120px;
+        }
+        .wrong .fa-check
+        {
+            display: none;
         }
 
-        numBoolean = false;
-        for (let i = 0; i < value.length; i++) {
-            for (let j = 0; j < numbers.length; j++) {
-                if (value[i] == numbers[j]) {
-                    numBoolean = true;
-                }
-            }
+        .good .fa-times
+        {
+            display: none;
+        }
+        .valid-feedback,
+        .invalid-feedback {
+            margin-left: calc(2em + 0.25rem + 1.5rem);
         }
 
-        specialCharBoolean = false;
-        for (let i = 0; i < value.length; i++) {
-            for (let j = 0; j < specialChars.length; j++) {
-                if (value[i] == specialChars[j]) {
-                    specialCharBoolean = true;
-                }
-            }
+
+        .banner {
+            background: transparent;
+            color: #fff;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            text-align: center;
         }
 
-        if (lengBoolean == true && bigLetterBoolean == true && numBoolean == true && specialCharBoolean == true) {
-            password.classList.remove("is-invalid");
-            password.classList.add("is-valid");
 
-            requirements.forEach((element) => {
-                element.classList.remove("wrong");
-                element.classList.add("good");
-            });
-            passwordAlert.classList.remove("alert-warning");
-            passwordAlert.classList.add("alert-success");
-        } else {
-            password.classList.remove("is-valid");
-            password.classList.add("is-invalid");
-
-            passwordAlert.classList.add("alert-warning");
-            passwordAlert.classList.remove("alert-success");
-
-            if (lengBoolean == false) {
-                leng.classList.add("wrong");
-                leng.classList.remove("good");
-            } else {
-                leng.classList.add("good");
-                leng.classList.remove("wrong");
-            }
-
-            if (bigLetterBoolean == false) {
-                bigLetter.classList.add("wrong");
-                bigLetter.classList.remove("good");
-            } else {
-                bigLetter.classList.add("good");
-                bigLetter.classList.remove("wrong");
-            }
-
-            if (numBoolean == false) {
-                num.classList.add("wrong");
-                num.classList.remove("good");
-            } else {
-                num.classList.add("good");
-                num.classList.remove("wrong");
-            }
-
-            if (specialCharBoolean == false) {
-                specialChar.classList.add("wrong");
-                specialChar.classList.remove("good");
-            } else {
-                specialChar.classList.add("good");
-                specialChar.classList.remove("wrong");
-            }
+        .banner a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            position: relative;
+            text-align: center;
         }
-    });
 
-    password.addEventListener("blur", () => {
-        passwordAlert.classList.add("d-none");
-    });
-});
+        .banner a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 2px;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+            text-align: center;
+        }
+        .about{
+            white-space: nowrap;
+            margin-right:-450px;
+            margin-left: 0px;
+        }
+        .sign-in{
+            white-space: nowrap;
+            margin-right: 180px;
+            margin-left: 100px;
+        }
+        .banner a:hover::before {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
 
-if (document.title == "HashimPage - About Me") {
-    addQAndAElements();
-}
-function sendDataToDataBase()
-{
-    document.getElementById('loginSubmitButton').onclick = function() {alert("button was clicked");}
-}
+        .content {
+            margin: 100px auto;
+            max-width: 800px;
+            text-align: center;
+            scrollbar-width: none;
+        }
 
-sendDataToDataBase();
+
+        .programming-language {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+
+        .keyword1 {
+            color: #ff5f5f;
+            font-weight: bold;
+        }
+
+        .keyword2 {
+            color: #00ff8c;
+            font-weight: bold;
+        }
+
+        .keyword3 {
+            color: #00aaff;
+            font-weight: bold;
+        }
+
+        .keyword4 {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .keyword5 {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+        .keyword6 {
+            color: #8dff00;
+            font-weight: bold;
+        }
+        .keyword7 {
+            color: #ff5f5f;
+            font-weight: bold;
+        }
+        .keyword8 {
+            color: #00ff8c;
+            font-weight: bold;
+        }
+        .keyword9 {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .curved-box {
+            position: relative;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .curved-box::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(to bottom right, #450b73, #23063a);
+            border-radius: 30px;
+            z-index: -1;
+        }
+
+        .bottom-banner {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .bottom-banner a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <a class="github-link" href="https://github.com/AMAZINGMAN2" target=”_blank”>
+        <img class="github-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub Logo">
+        &nbsp;&nbsp;GitHub
+    </a>
+    <div class="home">
+        <a href='/'>Home</a>
+        <a class='about' href='/about'>About Me</a>
+    </div>
+    <a class="sign-in" href="/sign-in">Sign In</a> <!-- Open link in a new page -->
+    <a href="https://www.youtube.com/@hashbrownthebro" target="_blank">
+        <img class="youtube-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">&nbsp;YouTube Channel</a>
+
+</div>
+
+<div class="content">
+    <input type="text" class="form-control" placeholder="Username">
+    <div> <h3></h3></div>
+    <div class="row">
+        <div class="col-6">
+            <div class="input-group d-flex">
+
+                <input
+                        type="password"
+                        class="form-control rounded mt-1"
+                        placeholder="Type your password"
+                        aria-label="password"
+                        aria-describedby="password"
+                        id="password-input"
+                />
+                <div class="valid-feedback">Good</div>
+                <div class="invalid-feedback">Wrong</div>
+            </div>
+        </div>
+
+        <div class="col-6 mt-4 mt-xxl-0 w-auto h-auto">
+
+            <div
+                    class="alert px-4 py-3 mb-0 d-none"
+                    role="alert"
+                    data-mdb-color="warning"
+                    id="password-alert"
+            >
+                <ul class="list-unstyled mb-0">
+                    <li class="requirements leng">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <i class="fas fa-times text-danger me-3"></i>
+                        Your password must have at least 8 chars</li>
+                    <li class="requirements big-letter">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <i class="fas fa-times text-danger me-3"></i>
+                        Your password must have at least 1 big letter.</li>
+                    <li class="requirements num">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <i class="fas fa-times text-danger me-3"></i>
+                        Your password must have at least 1 number.</li>
+                    <li class="requirements special-char">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <i class="fas fa-times text-danger me-3"></i>
+                        Your password must have at least 1 special char.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div> <h1></h1></div>
+    <input class="btn btn-primary btn-lg" type="submit" value="Submit" id="registerSubmitButton">
+    <h1 class="big-bottom-margin"></h1>
+</div>
+
+<div class="bottom-banner">
+    <a href="https://github.com/AMAZINGMAN2" target="_blank">GitHub</a>
+    <a href="https://www.youtube.com/@hashbrownthebro" target="_blank">YouTube</a>
+    <a href="mailto:hashim.almuqbel@gmail.com" target="_blank">hashim.almuqbel@gmail.com</a>
+</div>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
