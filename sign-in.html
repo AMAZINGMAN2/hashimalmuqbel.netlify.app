@@ -1,1 +1,246 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HashimPage - About Me</title>
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
 
+    <style>
+
+        body {
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            background: linear-gradient(to bottom right, #251b4d, #101429);
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+        }
+        body::-webkit-scrollbar {
+            width:0;
+        }
+        .github-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .github-image {
+            height: 30px;
+            width: auto;
+            margin-left: 0px;
+            margin-top: -4px;
+        }
+        .youtube-image {
+            height: 30px;
+            width: auto;
+            margin-left: 10px;
+            margin-top: -4px;
+            margin-bottom: -8px;
+        }
+
+
+        body::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+
+        body {
+            scrollbar-width: none;
+        }
+
+        .content {
+            padding-right: 0;
+        }
+        .home {
+            white-space: nowrap;
+            margin-right: -25px;
+            margin-left: 120px;
+        }
+
+        .banner {
+            background: transparent;
+            color: #fff;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            text-align: center;
+        }
+
+        .banner a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .banner a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 2px;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+            text-align: center;
+        }
+        .about{
+            white-space: nowrap;
+            margin-right:-450px;
+            margin-left: 0px;
+        }
+        .sign-in{
+            white-space: nowrap;
+            margin-right: 180px;
+            margin-left: 100px;
+        }
+        .banner a:hover::before {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            margin: 100px auto;
+            max-width: 800px;
+            text-align: center;
+            scrollbar-width: none;
+        }
+
+
+        .programming-language {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+
+        .keyword1 {
+            color: #ff5f5f;
+            font-weight: bold;
+        }
+
+        .keyword2 {
+            color: #00ff8c;
+            font-weight: bold;
+        }
+
+        .keyword3 {
+            color: #00aaff;
+            font-weight: bold;
+        }
+
+        .keyword4 {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .keyword5 {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+        .keyword6 {
+            color: #8dff00;
+            font-weight: bold;
+        }
+        .keyword7 {
+            color: #ff5f5f;
+            font-weight: bold;
+        }
+        .keyword8 {
+            color: #00ff8c;
+            font-weight: bold;
+        }
+        .keyword9 {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .curved-box {
+            position: relative;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .curved-box::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(to bottom right, #450b73, #23063a);
+            border-radius: 30px;
+            z-index: -1;
+        }
+
+        .bottom-banner {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .bottom-banner a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <a class="github-link" href="https://github.com/AMAZINGMAN2" target=”_blank”>
+        <img class="github-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub Logo">
+        &nbsp;&nbsp;GitHub
+    </a>
+    <div class="home">
+        <a href='/'>Home</a>
+        <a class='about' href='/about'>About Me</a>
+    </div>
+    <a class="sign-in" href="/sign-in">Sign In</a> <!-- Open link in a new page -->
+    <a href="https://www.youtube.com/@hashbrownthebro" target="_blank">
+        <img class="youtube-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">&nbsp;YouTube Channel</a>
+
+</div>
+
+<div class="content">
+
+
+</div>
+
+<div class="bottom-banner">
+    <a href="https://github.com/AMAZINGMAN2" target="_blank">GitHub</a>
+    <a href="https://www.youtube.com/@hashbrownthebro" target="_blank">YouTube</a>
+    <a href="mailto:hashim.almuqbel@gmail.com" target="_blank">hashim.almuqbel@gmail.com</a>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
