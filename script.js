@@ -289,15 +289,4 @@ addEventListener("DOMContentLoaded", (event) => {
 if (document.title == "HashimPage - About Me") {
     addQAndAElements();
 }
-function login()
-{
-    document.getElementById('loginSubmitButton').onclick = function() {alert("button was clicked");}
-    document.getElementById('registerSubmitButton').onclick = function() {alert("button was clicked1");}
-}
-function register()
-{
-    document.getElementById('registerSubmitButton').onclick = function() {alert("button was clicked1");}
-}
 
-register();
-login();
