@@ -25,6 +25,7 @@ function loginwithuser() {
     PlayFabClientSDK.LoginWithPlayFab(loginWithPlayfabRequest, function (result, error) {
         if (result !== null) {
             console.log('Login successful:', result);
+            window.open("http://hashimalmuqbel.netlify.app/profile");
         } else if (error !== null) {
             console.error('Login error:', error);
         }
