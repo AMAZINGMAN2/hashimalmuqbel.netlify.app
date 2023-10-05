@@ -16,6 +16,7 @@ const handleImageUpload = event => {
         })
 }
 
-document.querySelector('#fileUpload').addEventListener('change', event => {
+document.querySelector('#formFile').addEventListener('change', event => {
     handleImageUpload(event)
 })
+
