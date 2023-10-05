@@ -1,56 +1,36 @@
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[{]}\\|;:\'",<.>/?`~';
 
-const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?`~';
+var username, password;
 
-function generateString(length) {
-    let result = ' ';
-    const charactersLength = characters.length;
-    for ( let i = 0; i < length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
+window.addEventListener('load', function() {
+    // Get the input values when the 'load' event occurs
+    username = document.getElementById('username').value;
+    password = document.getElementById('password').value;
+});
 
-    return result;
-}
+document.getElementById('loginSubmitButton').onclick = function() {
+    // Get the input values when the 'loginSubmitButton' is clicked
+    username = document.getElementById('username').value;
+    password = document.getElementById('password').value;
 
+    alert(username);
+    loginwithuser();
+};
 
-function LoginWithCustomID(){
-    PlayFab.settings.titleId = "B58F6";
-    var loginRequest = {
-        TitleId: PlayFab.settings.titleId,
-        CustomId: generateString(16),
-        CreateAccount: false
+function loginwithuser() {
+    var loginWithPlayfabRequest = {
+        TitleId: "B58F6",
+        Username: username,
+        Password: password
     };
 
-    PlayFabClientSDK.LoginWithCustomID(loginRequest, LoginCallback);
+    PlayFabClientSDK.LoginWithPlayFab(loginWithPlayfabRequest, function (result, error) {
+        if (result !== null) {
+            // Successful login, you can perform further actions here
+            console.log('Login successful:', result);
+        } else if (error !== null) {
+            // Handle the error
+            console.error('Login error:', error);
+        }
+    });
 }
-
-var LoginCallback = function (result, error) {
-    if (result !== null) {
-        document.getElementById("resultOutput").innerHTML = "Congratulations, you made your first successful API call!";
-    } else if (error !== null) {
-        document.getElementById("resultOutput").innerHTML =
-            "Something went wrong with your first API call.\n" +
-            "Here's some debug information:\n" +
-            CompileErrorReport(error);
-    }
-}
-
-// This is a utility function we haven't put into the core SDK yet.  Feel free to use it.
-function CompileErrorReport(error) {
-    if (error === null)
-        return "";
-    var fullErrors = error.errorMessage;
-    for (var paramName in error.errorDetails)
-        for (var msgIdx in error.errorDetails[paramName])
-            fullErrors += "\n" + paramName + ": " + error.errorDetails[paramName][msgIdx];
-    return fullErrors;
-}
-function login()
-{
-    document.getElementById('loginSubmitButton').onclick = function()
-    {
-        LoginWithCustomID();
-        alert("should call the function");
-    }
-}
-
-login();
