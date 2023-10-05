@@ -5,6 +5,11 @@
     <link rel="shortcut icon" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+    <script type="text/javascript" src="JavaScriptSDK-master/PlayFabSdk/src/PlayFab/PlayFabClientApi.js"></script>
+
 
     <style>
 
@@ -59,8 +64,8 @@
         }
         .home {
             white-space: nowrap;
-            margin-right: -25px;
-            margin-left: 120px;
+            margin-right: -20px;
+            margin-left: 110px;
         }
 
         .banner {
@@ -100,13 +105,13 @@
         }
         .about{
             white-space: nowrap;
-            margin-right:-450px;
-            margin-left: 0px;
+            margin-right: -1345px;
+            margin-left: 20px;
         }
         .sign-in{
             white-space: nowrap;
-            margin-right: 180px;
-            margin-left: 100px;
+            margin-right: 710px;
+            margin-left: 20px;
         }
         .banner a:hover::before {
             background-color: rgba(255, 255, 255, 0.3);
@@ -218,18 +223,19 @@
 </head>
 <body>
 <div class="banner">
-    <a class="github-link" href="https://github.com/AMAZINGMAN2" target=”_blank”>
-        <img class="github-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub Logo">
-        &nbsp;&nbsp;GitHub
     </a>
     <div class="home">
         <a href='/'>Home</a>
         <a class='about' href='/about'>About Me</a>
     </div>
     <a class="sign-in" href="/sign-in">Sign In</a> <!-- Open link in a new page -->
-    <a href="https://www.youtube.com/@hashbrownthebro" target="_blank">
-        <img class="youtube-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">&nbsp;YouTube Channel</a>
+</div>
 
+<div class="content">
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Default file input example</label>
+        <input class="form-control" type="file" id="formFile">
+    </div>
 </div>
 
 <h1 class="big-bottom-margin"></h1>
@@ -237,7 +243,9 @@
     <a href="https://github.com/AMAZINGMAN2" target="_blank">GitHub</a>
     <a href="https://www.youtube.com/@hashbrownthebro" target="_blank">YouTube</a>
     <a href="mailto:hashim.almuqbel@gmail.com" target="_blank">hashim.almuqbel@gmail.com</a>
+
 </div>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
