@@ -12,8 +12,6 @@ document.getElementById('loginSubmitButton').onclick = function() {
     // Get the input values when the 'loginSubmitButton' is clicked
     username = document.getElementById('username').value;
     password = document.getElementById('password').value;
-
-    alert(username);
     loginwithuser();
 };
 
@@ -26,10 +24,8 @@ function loginwithuser() {
 
     PlayFabClientSDK.LoginWithPlayFab(loginWithPlayfabRequest, function (result, error) {
         if (result !== null) {
-            // Successful login, you can perform further actions here
             console.log('Login successful:', result);
         } else if (error !== null) {
-            // Handle the error
             console.error('Login error:', error);
         }
     });
