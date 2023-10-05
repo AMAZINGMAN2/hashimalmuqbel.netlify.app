@@ -27,6 +27,7 @@ function registerwithemail() {
         if (result !== null) {
             console.log('Register successful:', result);
             window.open("http://hashimalmuqbel.netlify.app/profile");
+            window.close();
         } else if (error !== null) {
             console.error('Register error:', error);
         }
