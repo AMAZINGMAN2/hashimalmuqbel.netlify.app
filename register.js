@@ -26,6 +26,7 @@ function registerwithemail() {
     PlayFabClientSDK.RegisterPlayFabUser(loginWithPlayfabRequest, function (result, error) {
         if (result !== null) {
             console.log('Register successful:', result);
+            window.open("http://hashimalmuqbel.netlify.app/profile");
         } else if (error !== null) {
             console.error('Register error:', error);
         }
