@@ -49,7 +49,7 @@ function login()
     document.getElementById('loginSubmitButton').onclick = function()
     {
         LoginWithCustomID();
-        alert("should call the function")
+        alert("should call the function");
     }
 }
 
