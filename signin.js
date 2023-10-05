@@ -26,6 +26,7 @@ function loginwithuser() {
         if (result !== null) {
             console.log('Login successful:', result);
             window.open("http://hashimalmuqbel.netlify.app/profile");
+            window.close();
         } else if (error !== null) {
             console.error('Login error:', error);
         }
