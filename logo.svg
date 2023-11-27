@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="640" height="640" viewBox="0 0 640 640" xml:space="preserve">
+<desc>Created with Fabric.js 5.3.0</desc>
+<defs>
+</defs>
+<g transform="matrix(0 1 0.5470332943 0 319.7581552306 301.9235097153)" id="oPdWtPygzh5PH9u0jtcho"  >
+<linearGradient id="SVGID_1342" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -37.7952706218 -248.728904692)"  x1="37.79527062178067" y1="343.4827731461379" x2="37.79527062178067" y2="140.81477673040902">
+<stop offset="0%" style="stop-color:#7D52F6;stop-opacity: 1"/>
+<stop offset="74.67532467532467%" style="stop-color:#8F67FF;stop-opacity: 1"/>
+<stop offset="100%" style="stop-color:#544187;stop-opacity: 1"/>
+</linearGradient>
+<path style="stroke: rgb(170,203,101); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_1342); fill-rule: nonzero; opacity: 1;"  transform=" translate(0, 0)" d="M -37.79527 -219.41592 C -37.79527 -235.60503 -30.616080000000004 -248.7289 -21.76009 -248.7289 L 21.760099999999998 -248.7289 L 21.760099999999998 -248.7289 C 30.616079999999997 -248.7289 37.79528 -235.60503 37.79528 -219.41592 L 37.79528 219.41592 L 37.79528 219.41592 C 37.79528 235.60503 30.61609 248.7289 21.760099999999998 248.7289 L -21.76009 248.7289 L -21.76009 248.7289 C -30.61607 248.7289 -37.79527 235.60503 -37.79527 219.41592 z" stroke-linecap="round" />
+</g>
+<g transform="matrix(-1 0 0 -1 216.3723284589 319.999999846)" id="sPwIWva9JMEbj5ialkQZU"  >
+<linearGradient id="SVGID_1153" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -37.7952706218 -248.728904692)"  x1="0" y1="248.728904692031" x2="75.59054124356135" y2="248.728904692031">
+<stop offset="0%" style="stop-color:#7D52F6;stop-opacity: 1"/>
+<stop offset="61.80059678949491%" style="stop-color:#8F67FF;stop-opacity: 1"/>
+<stop offset="100%" style="stop-color:#544187;stop-opacity: 1"/>
+</linearGradient>
+<path style="stroke: rgb(170,203,101); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_1153); fill-rule: nonzero; opacity: 1;"  transform=" translate(0, 0)" d="M -37.79527 -232.69373 C -37.79527 -241.54970999999998 -30.616080000000004 -248.72890999999998 -21.76009 -248.72890999999998 L 21.760099999999998 -248.72890999999998 L 21.760099999999998 -248.72890999999998 C 30.616079999999997 -248.72890999999998 37.79528 -241.54971999999998 37.79528 -232.69373 L 37.79528 232.69372 L 37.79528 232.69372 C 37.79528 241.5497 30.61609 248.7289 21.760099999999998 248.7289 L -21.76009 248.7289 L -21.76009 248.7289 C -30.61607 248.7289 -37.79527 241.54971 -37.79527 232.69372 z" stroke-linecap="round" />
+</g>
+<g transform="matrix(-1 0 0 -1 423.6276715411 320.000000154)" id="SEhrc1ZyoIFAyqv6JE_E4"  >
+<linearGradient id="SVGID_1320" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -37.7952706218 -248.728904692)"  x1="0" y1="248.728904692031" x2="75.59054124356135" y2="248.728904692031">
+<stop offset="0%" style="stop-color:#7D52F6;stop-opacity: 1"/>
+<stop offset="75.98214627292346%" style="stop-color:#7D52F6;stop-opacity: 1"/>
+<stop offset="100%" style="stop-color:#544187;stop-opacity: 1"/>
+</linearGradient>
+<path style="stroke: rgb(170,203,101); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_1320); fill-rule: nonzero; opacity: 1;"  transform=" translate(0, 0)" d="M -37.79527 -232.69373 C -37.79527 -241.54970999999998 -30.616080000000004 -248.72890999999998 -21.76009 -248.72890999999998 L 21.760099999999998 -248.72890999999998 L 21.760099999999998 -248.72890999999998 C 30.616079999999997 -248.72890999999998 37.79528 -241.54971999999998 37.79528 -232.69373 L 37.79528 232.69372 L 37.79528 232.69372 C 37.79528 241.5497 30.61609 248.7289 21.760099999999998 248.7289 L -21.76009 248.7289 L -21.76009 248.7289 C -30.61607 248.7289 -37.79527 241.54971 -37.79527 232.69372 z" stroke-linecap="round" />
+</g>
+</svg>
