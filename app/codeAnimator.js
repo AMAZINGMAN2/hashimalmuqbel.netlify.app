@@ -1,79 +1,79 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { ShikiMagicMove } from 'shiki-magic-move/react';
-import { createHighlighter } from 'shiki';
-import 'shiki-magic-move/dist/style.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { motion } from 'framer-motion';
 
-const skillsList = [
-  '',
-  '\'DSA\'',
-  '\'ML\'',
-  '\'Python\'',
-  '\'C++\'',
-  '\'C#\'',
-  '\'JavaScript\'',
-];
+const skillset = "'DSA', 'ML', 'Python', 'C++', 'C#', 'JavaScript'";
 
 const CodeAnimator = () => {
-  const [code, setCode] = useState('');
-  const [highlighter, setHighlighter] = useState(null);
+  const [skills, setSkills] = useState([]);
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const [isPausing, setIsPausing] = useState(false);
-
-  useEffect(() => {
-    const initializeHighlighter = async () => {
-      const highlighter = await createHighlighter({
-        themes: ['dracula'], // Use Dracula theme
-        langs: ['cpp'],
-      });
-      setHighlighter(highlighter);
-    };
-
-    if (typeof window !== 'undefined') {
-      initializeHighlighter();
-    }
-  }, []);
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // If currently in pause state, don't update the code or index
       if (isPausing) return;
-
-      // Update the code with current skills
-      setCode(prevCode => {
-        const updatedSkills = skillsList.slice(1, currentSkillIndex + 1).join(', ');
-        return `#include <iostream>\n#include <vector>\n\nclass Hashim {\npublic:\n    std::string name = "Master Programmer";\n    std::vector<std::string> skills = {}\n    skills = {${updatedSkills}};\n    bool hardWorker = true, problemSolver = true;\n\n    bool isQualified() {\n        return hardWorker && problemSolver && skills.size() >= 6;\n    }\n};`;
-      });
-
-      // Increment or reset the index
-      if (currentSkillIndex < skillsList.length - 1) {
-        setCurrentSkillIndex(prevIndex => prevIndex + 1);
-      } else {
-        setIsPausing(true); // Start pause after the last skill
-        setCurrentSkillIndex(0); // Reset index for next loop
-
-        // Pause for a certain duration before resuming
-        setTimeout(() => {
-          setIsPausing(false); // End pause
-        }, 1000); // Adjust pause duration as necessary
+      
+      if (!isAnimationComplete) {
+        if (currentSkillIndex < skillset.length - 1) {
+          setSkills(prev => [...prev, skillset[currentSkillIndex + 1]]);
+          setCurrentSkillIndex(prevIndex => prevIndex + 1);
+        } else {
+          setIsAnimationComplete(true);
+          setIsPausing(true);
+          setTimeout(() => {
+            setSkills([]);
+            setCurrentSkillIndex(0);
+            setIsAnimationComplete(false);
+            setIsPausing(false);
+          }, 5000); // Pause duration after animation completion
+        }
       }
-    }, 2000); // Time to display each skill
+    }, 55); // Time to display each skill
 
     return () => clearTimeout(timer);
-  }, [currentSkillIndex, isPausing]); // Add isPausing to dependency array
+  }, [currentSkillIndex, isPausing, isAnimationComplete]);
+
+  const code = `#include <iostream>
+#include <vector>
+
+class Hashim {
+public:
+    std::string name = "Master Programmer";
+    std::vector<std::string> skills = {};
+    skills = {${skills.join('')}};
+    bool hardWorker = true, problemSolver = true;
+
+    bool isQualified() {
+        return hardWorker && problemSolver && skills.size() >= 6;
+    }
+};`;
 
   return (
-    <div className="flex flex-col items-center">
-      {highlighter && (
-        <ShikiMagicMove
-          lang="cpp"
-          theme="dracula" // Ensure theme is set to Dracula
-          highlighter={highlighter}
-          code={code}
-          className='p-4 rounded-xl priority shadow-xl left-[19vw] -top-[45vh] shadow-lg shadow-purple-500/30'
-          options={{ duration: 800, stagger: 0.2, lineNumbers: true }}
-        />
-      )}
+    <div 
+      className="flex flex-col items-start" 
+      style={{ position: 'relative', top: '-40vh', left: '19vw' }}
+    >
+      <motion.div
+        className="-pb-[30px] rounded-xl shadow-xl shadow-purple-500/30"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <SyntaxHighlighter
+          language="cpp"
+          style={dracula}
+          showLineNumbers={true}
+          wrapLines={true}
+          customStyle={{
+            borderRadius: '0.5em',
+          }}
+        >
+          {code}
+        </SyntaxHighlighter>
+      </motion.div>
     </div>
   );
 };
