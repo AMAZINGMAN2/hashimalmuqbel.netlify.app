@@ -1,5 +1,3 @@
-// layout.js
-
 import Navbar from './navbar';
 import "./globals.css";
 import CodeAnimator from './codeAnimator'; // Adjust the path as necessary
