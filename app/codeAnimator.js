@@ -44,7 +44,8 @@ public:
     std::string name = "Master Programmer";
     std::vector<std::string> skills = {};
     skills = {${skills.join("")}};
-    bool hardWorker = true, problemSolver = true;
+    bool hardWorker = true 
+    problemSolver = true;
 
     bool isQualified() {
         return hardWorker && problemSolver && skills.size() >= 6;
