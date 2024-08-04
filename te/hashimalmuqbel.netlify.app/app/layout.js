@@ -2,7 +2,6 @@ import Navbar from "./navbar";
 import "./globals.css";
 import CodeAnimator from "./codeAnimator"; // Adjust the path as necessary
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export const metadata = {
   title: "Hashim Almuqbel - Portfolio", 
@@ -33,4 +32,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
