@@ -1,10 +1,10 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { motion } from 'framer-motion';
+"use client";
+import { useEffect, useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { motion } from "framer-motion";
 
-const skillset = "'DSA', 'ML', 'Python', 'C++', 'C#', 'JavaScript'";
+const skillset = " 'DSA', 'ML', 'Python', 'C++', 'C#', 'JavaScript' ";
 
 const CodeAnimator = () => {
   const [skills, setSkills] = useState([]);
@@ -43,7 +43,7 @@ class Hashim {
 public:
     std::string name = "Master Programmer";
     std::vector<std::string> skills = {};
-    skills = {${skills.join('')}};
+    skills = {${skills.join("")}};
     bool hardWorker = true, problemSolver = true;
 
     bool isQualified() {
@@ -54,7 +54,7 @@ public:
   return (
     <div 
       className="flex flex-col items-start" 
-      style={{ position: 'relative', top: '-40vh', left: '19vw' }}
+      style={{ position: "relative", top: "-40vh", left: "19vw" }}
     >
       <motion.div
         className="-pb-[30px] rounded-xl shadow-xl shadow-purple-500/30"
@@ -68,7 +68,7 @@ public:
           showLineNumbers={true}
           wrapLines={true}
           customStyle={{
-            borderRadius: '0.5em',
+            borderRadius: "0.5em",
           }}
         >
           {code}
