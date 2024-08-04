@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="z-20 pt-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-xl">Logo</div>
+        <div className="text-white font-bold text-xl ml-[8vw]">Logo</div>
         <div className="space-x-10">
 
           <Link href="/about" className="text-white hover:text-purple-200 select-none">

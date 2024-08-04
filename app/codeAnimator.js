@@ -44,8 +44,8 @@ public:
     std::string name = "Master Programmer";
     std::vector<std::string> skills = {};
     skills = {${skills.join("")}};
-    bool hardWorker = true 
-    problemSolver = true;
+    bool hardWorker = true;
+    bool problemSolver = true;
 
     bool isQualified() {
         return hardWorker && problemSolver && skills.size() >= 6;
@@ -53,31 +53,51 @@ public:
 };`;
 
   return (
-    <div 
-      className="flex flex-col items-start" 
-      style={{ position: "relative", top: "-40vh", left: "19vw" }}
-    >
-      <motion.div
-        className="-pb-[30px] rounded-xl shadow-xl shadow-purple-500/30"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <SyntaxHighlighter
-          language="cpp"
-          style={dracula}
-          showLineNumbers={true}
-          wrapLines={true}
-          customStyle={{
-            borderRadius: "0.5em",
-          }}
+    <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-10 space-y-6 lg:space-y-0">
+      {/* Text Section */}
+      <div className="flex-1">
+        <div className="text-center lg:text-left">
+          <h1 className="text-5xl font-bold leading-normal mx-[10vw]">
+            <span className="bg-gradient-to-r from-blue-600 via-violet-500 to-green-500 text-transparent bg-clip-text">
+              Empowering
+            </span>{" "}
+            Tomorrows <br />{" "}
+            <span className="bg-gradient-to-r from-pink-600 via-violet-700 to-purple-800 text-transparent bg-clip-text">
+              Innovations
+            </span>{" "}
+            Through{" "}
+            <span className="bg-gradient-to-br from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+              Creativity!
+            </span>
+          </h1>
+        </div>
+      </div>
+
+      {/* Code Block */}
+      <div className="flex-1 lg:mt-0 mt-6 md:mx-[16vw] mx-[8vw]">
+        <motion.div
+          className="rounded-xl shadow-xl shadow-purple-500/30 w-full lg:w-[650px]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
-          {code}
-        </SyntaxHighlighter>
-      </motion.div>
+          <div className="text-[0.48rem] sm:text-[0.48rem] md:text-[0.7rem] lg:text-base ">
+            <SyntaxHighlighter
+              language="cpp"
+              style={dracula}
+              showLineNumbers={true}
+              wrapLines={true}
+              customStyle={{
+                borderRadius: "0.5em",
+              }}
+            >
+              {code}
+            </SyntaxHighlighter>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
 
 export default CodeAnimator;
-
