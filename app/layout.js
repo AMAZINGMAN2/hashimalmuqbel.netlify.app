@@ -7,10 +7,11 @@ export const metadata = {
   title: "Hashim Almuqbel - Portfolio",
   description: "This is Hashim Almuqbel's Portfolio",
   icons: {
-    icon: '/logo.svg',
-    apple: '/logo.svg',
+    icon: '/logo.svg', // Update this path
+    apple: '/logo.svg', // Update this path
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
