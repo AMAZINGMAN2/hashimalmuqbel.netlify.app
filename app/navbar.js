@@ -13,7 +13,7 @@ const Navbar = () => {
           <Link href="/socials" className="text-white hover:text-purple-200 select-none">
             Socials
           </Link>
-          <button className="bg-gradient-to-r from-blue-600 to-violet-700 text-white text-bold text-lg tracking-[.15em] px-4 py-2 rounded-3xl hover:bg-purple-400 select-none">
+          <button className="bg-gradient-to-r from-blue-600 to-violet-700 text-white text-bold text-lg tracking-[.15em] mr-[8vw] px-4 py-2 rounded-3xl hover:bg-purple-400 select-none">
             CV
           </button>
         </div>

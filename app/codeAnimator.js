@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
 
-const skillset = " 'DSA', 'ML', 'Python', 'C++', 'C#', 'JavaScript' ";
+const skillset = " 'DSA', 'ML', 'Python', 'C++', 'C#', 'JavaScript'";
 
 const CodeAnimator = () => {
   const [skills, setSkills] = useState([]);
@@ -74,21 +74,23 @@ public:
       </div>
 
       {/* Code Block */}
-      <div className="flex-1 lg:mt-0 mt-6 md:mx-[16vw] mx-[8vw]">
+      <div className="flex-1 lg:mt-0 mt-6 px-4 sm:px-6 md:px-12 lg:px-16 overflow-x-hidden">
         <motion.div
-          className="rounded-xl shadow-xl shadow-purple-500/30 w-full lg:w-[650px]"
+          className="rounded-xl shadow-xl  shadow-purple-500/30 w-full lg:w-[650px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-[0.48rem] sm:text-[0.48rem] md:text-[0.7rem] lg:text-base ">
+          <div className="text-[0.48rem] sm:text-[0.48rem] md:text-[0.7rem] lg:text-base">
             <SyntaxHighlighter
               language="cpp"
               style={dracula}
               showLineNumbers={true}
-              wrapLines={true}
+              wrapLines={false}
               customStyle={{
                 borderRadius: "0.5em",
+                maxWidth: "100%", // Ensure it doesn't overflow the container
+                overflowX: "auto" // Allow horizontal scroll if needed
               }}
             >
               {code}
