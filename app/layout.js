@@ -6,6 +6,10 @@ import Image from "next/image";
 export const metadata = {
   title: "Hashim Almuqbel - Portfolio",
   description: "This is Hashim Almuqbel's Portfolio",
+  icons: {
+    icon: '/logo.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default function RootLayout({ children }) {

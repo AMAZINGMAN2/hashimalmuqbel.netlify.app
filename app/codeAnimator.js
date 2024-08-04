@@ -55,9 +55,9 @@ public:
   return (
     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-10 space-y-6 lg:space-y-0">
       {/* Text Section */}
-      <div className="flex-1">
+      <motion.div className="flex-1" initial={{ opacity: 0, y : -50}} animate={{ opacity: 1, y : 0}} transition={{ duration: 1.3 }}>
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold leading-normal mx-[10vw]">
+          <h1 className="text-5xl font-bold leading-normal mx-[5vw]">
             <span className="bg-gradient-to-r from-blue-600 via-violet-500 to-green-500 text-transparent bg-clip-text">
               Empowering
             </span>{" "}
@@ -71,7 +71,7 @@ public:
             </span>
           </h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Code Block */}
       <div className="flex-1 lg:mt-0 mt-6 px-4 sm:px-6 md:px-12 lg:px-16 overflow-x-hidden">

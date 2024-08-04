@@ -47,6 +47,9 @@ body {
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(143, 68, 180); /* Optionally, a slightly different shade for hover effect */
+    background: rgb(69, 32, 87); /* Optionally, a slightly different shade for hover effect */
   }
+}
+.font-trebuchet {
+  font-family: 'Trebuchet MS', sans-serif;
 }
