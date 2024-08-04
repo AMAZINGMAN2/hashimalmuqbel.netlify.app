@@ -74,9 +74,9 @@ public:
       </motion.div>
 
       {/* Code Block */}
-      <div className="flex-1 lg:mt-0 mt-6 px-4 sm:px-6 md:px-12 lg:px-16 overflow-x-hidden">
+      <div className="flex-1 lg:mt-0 mt-6 px-4 sm:px-6 md:px-12 lg:px-16">
         <motion.div
-          className="rounded-xl shadow-xl  shadow-purple-500/30 w-full lg:w-[650px]"
+          className="rounded-xl shadow-xl shadow-purple-500/20 w-full lg:w-[650px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}

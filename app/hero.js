@@ -2,9 +2,9 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="text-white py-16 px-4">
+    <section className="text-white pt-10 pb-16 px-4">
       <div className="container mx-auto text-center lg:text-left">
-        <h2 className="text-sm text-purple-400 mx-auto justify-center flex tracking-wide uppercase">Hello,<br/></h2>
+        <h2 className="text-sm text-purple-400 mx-auto justify-center flex tracking-wide uppercase">Hello,</h2>
         <h1 className="text-4xl lg:text-6xl font-black mt-2">
         <br/>
           I&apos;m Hashim Almuqbel.

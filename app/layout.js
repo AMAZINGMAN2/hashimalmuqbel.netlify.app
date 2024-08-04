@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         
         {/* Background Image */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-0 -left-[50vw] w-[150vw] h-full overflow-visible -z-10">
           <Image
             src="/gridAndBlur.svg"
             alt="Grid and Blur"
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         </div>
 
         {/* Main Content */}
-        <main className="relative z-10 min-h-screen flex flex-col items-center justify-between pt-16">
+        <main className="relative z-10 min-h-screen flex flex-col items-center justify-between py-16">
           <CodeAnimator />
           {children}
         </main>
